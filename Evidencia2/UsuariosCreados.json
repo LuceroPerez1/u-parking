@@ -1,0 +1,22 @@
+[
+  {
+    "Nombre": "Lucero",
+    "Apellido": "Perez",
+    "Modelo": "Spark",
+    "Marca": "Chevrolet",
+    "Placas": "SSN10B",
+    "Color": "Verde",
+    "Email": "luceroestrada120@icloud.com",
+    "Contrasena": "Contra"
+  },
+  {
+    "Nombre": "Adal",
+    "Apellido": "Saldivar",
+    "Modelo": "Yaris",
+    "Marca": "Toyota",
+    "Placas": "SJSS23",
+    "Color": "Gris",
+    "Email": "AdalSaldivar@icloud.com",
+    "Contrasena": "Contrasena"
+  }
+]

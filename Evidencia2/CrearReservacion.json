@@ -1,0 +1,14 @@
+[
+  {
+    "Zona": "Zona A",
+    "NumeroCajon": "3",
+    "HoraEntrada": "11:00",
+    "HoraSalida": "16:00"
+  },
+  {
+    "Zona": "Zona Oriente",
+    "NumeroCajon": "4",
+    "HoraEntrada": "02:00",
+    "HoraSalida": "15:00"
+  }
+]
