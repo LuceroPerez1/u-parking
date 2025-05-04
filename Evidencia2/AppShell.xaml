@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Evidencia2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Evidencia2"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Evidencia2">
+
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
+
+    <ShellContent
+    Title="CrearCuenta"
+    ContentTemplate="{DataTemplate local:CrearCuenta}"
+    Route="CrearCuenta" />
+
+    <ShellContent
+    Title="Reservacion"
+    ContentTemplate="{DataTemplate local:Reservacion}"
+    Route="Reservacion"/>
+
+    <ShellContent
+    Title="Reglamento"
+    ContentTemplate="{DataTemplate local:Reglamento}"
+    Route="Reglamento"/>
+
+    <ShellContent
+    Title="InicioSesion"
+    ContentTemplate="{DataTemplate local:InicioSesion}"
+    Route="InicioSesion"/>
+
+    <ShellContent
+    Title="MiPerfil"
+    ContentTemplate="{DataTemplate local:MiPerfil}"
+    Route="MiPerfil"/>
+
+    <ShellContent
+    Title="MiReservacion"
+    ContentTemplate="{DataTemplate local:MiReservacion}"
+    Route="MiReservacion"/>
+
+</Shell>

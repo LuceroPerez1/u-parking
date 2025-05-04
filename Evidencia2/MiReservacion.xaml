@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidencia2.MiReservacion"
+             BackgroundColor="Black"
+             Title="Mi reservación">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="25" HorizontalOptions="Center">
+
+            <!-- Encabezado -->
+            <Label Text="U PAR-KING"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Aqua"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Mi reservación"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+
+            <!-- Tarjeta de reserva -->
+            <Frame BackgroundColor="Black"
+                   BorderColor="Aqua"
+                   CornerRadius="20"
+                   Padding="20"
+                   WidthRequest="300"
+                   HasShadow="True">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Icono de tiempo -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Image Source="hourglass_icon.png"
+                               WidthRequest="35"
+                               HeightRequest="35"
+                               VerticalOptions="Center"/>
+                        <VerticalStackLayout>
+                            <Label Text="Tiempo restante"
+                                   FontSize="16"
+                                   TextColor="White"/>
+                            <Label Text="7:56 min"
+                                   FontSize="14"
+                                   FontAttributes="Bold"
+                                   TextColor="Aqua"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <!-- Zona -->
+                    <Label Text="Zona" FontSize="16" TextColor="Gray"/>
+                    <Label Text="Zona Norte" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+
+                    <!-- Cajón -->
+                    <Label Text="Número de cajón" FontSize="16" TextColor="Gray"/>
+                    <Label Text="17" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+
+                    <!-- Hora -->
+                    <Label Text="Hora de Entrada" FontSize="16" TextColor="Gray"/>
+                    <Label Text="8:00:00 am" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+
+                    <Label Text="Hora de Salida" FontSize="16" TextColor="Gray"/>
+                    <Label Text="12:00:00 am" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botón ELIMINAR (fuera del Frame) -->
+            <Button 
+                x:Name="EliminarBtn"
+                Text="Eliminar"
+                TextColor="black"
+                FontSize="16"
+                BackgroundColor="Aqua"
+                BorderColor="Aqua"
+                CornerRadius="15"
+                WidthRequest="300"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                Padding="0"
+                FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidencia2.InicioSesion"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+
+            <!-- Título -->
+            <Label Text="U PAR-KING"
+                   FontAttributes="Bold"
+                   TextColor="Aqua"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0"/>
+
+            <!-- Subtítulo -->
+            <Label Text="Inicio de sesión"
+                   FontSize="18"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <!-- Campo Email -->
+            <Border Stroke="Aqua" StrokeThickness="2" Background="Transparent" Padding="5" WidthRequest="300">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Email"
+                       TextColor="White"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="Transparent"
+                       FontSize="16"
+                       HeightRequest="40"
+                       HorizontalOptions="Fill"/>
+            </Border>
+
+            <!-- Campo Contraseña -->
+            <Border Stroke="Aqua" StrokeThickness="2" Background="Transparent" Padding="5" WidthRequest="300">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       TextColor="White"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="Transparent"
+                       FontSize="16"
+                       HeightRequest="40"
+                       HorizontalOptions="Fill"/>
+            </Border>
+
+            <!-- Botón Iniciar Sesión -->
+            <Button Text="Iniciar sesión"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    Clicked="OnLoginClicked"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="45"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0"/>
+
+            <!-- Enlace para crear cuenta -->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="¿Nuevo aquí?"
+                       TextColor="White"
+                       FontSize="14"
+                       HorizontalOptions="Center"/>
+                <Label Text=" Crea tu cuenta"
+                       TextColor="Aqua"
+                       FontAttributes="Bold"
+                       FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCreateAccountClicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

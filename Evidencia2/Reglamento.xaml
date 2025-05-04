@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidencia2.Reglamento"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20"
+                             VerticalOptions="Center" HorizontalOptions="Center"
+                             WidthRequest="350"
+                             BackgroundColor="Black">
+
+            <!-- Título principal -->
+            <Label Text="U PAR-KING" 
+                   FontAttributes="Bold"
+                   TextColor="Aqua"
+                   HorizontalOptions="Center"
+                   FontSize="24"
+                   Margin="0,5,0,0"/>
+
+            <!-- Subtítulo -->
+            <Label Text="REGLAS"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   Margin="0,5,0,0"/>
+
+            <!-- Sección de conducta -->
+            <Label Text="USO DEL ESTACIONAMIENTO"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   Margin="0,5,0,0"/>
+
+            <!-- Descripción de conducta -->
+            <Border BackgroundColor="Transparent"
+                   StrokeThickness="0"
+                   Padding="10"
+                   Margin="25,0">
+                <Label Text="El usuario debe estacionarse unicamente en el lugar asignado.No se permite la ocupacion de mas de un espacio por vehiculo.Esta prohibido obstruir otras areas de estacionamiento o accesos."
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="14"
+                       LineBreakMode="WordWrap" />
+            </Border>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="250"
+                     Color="White"
+                     HorizontalOptions="Center" 
+                     Margin="0,5,0,5"/>
+
+            <Label Text="RESERVACIONES"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   Margin="0,5,0,0"/>
+
+            <!-- Descripción de conducta -->
+            <Border BackgroundColor="Transparent"
+                    StrokeThickness="0"
+                    Padding="10"
+                    Margin="25,0">
+                <Label Text="Cada usuario podrá reservar un lugar con anticipación según la disponibilidad.La reserva es válida únicamente para el periodo seleccionado."
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="14"
+                       LineBreakMode="WordWrap" />  
+            </Border>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="250"
+                     Color="White"
+                     HorizontalOptions="Center" 
+                     Margin="0,5,0,5"/>
+            
+            <Label Text="SEGURIDAD/RESPONSABILIDAD"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   Margin="0,5,0,0"/>
+
+            <!-- Descripción de conducta -->
+            <Border BackgroundColor="Transparent"
+                    StrokeThickness="0"
+                    Padding="10"
+                    Margin="25,0">
+                <Label Text="La empresa no se hace responsable por robos, daños o perdidas dentro del estacionamiento.El usuario es responsable de cerrar su vehículo y tomar sus pertenencias.Está prohibido dejar el vehículo por más tiempo permitido, en caso de lo contrario, se aplicará multa o remolque."
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="14"
+                       LineBreakMode="WordWrap" />
+            </Border>
+
+            <BoxView HeightRequest="1"
+                     WidthRequest="250"
+                     Color="White"
+                     HorizontalOptions="Center" 
+                     Margin="0,5,0,5"/>
+
+            <Label Text="CONDUCTA DEL USUARIO"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   Margin="0,5,0,0"/>
+
+            <!-- Descripción de conducta -->
+            <Border BackgroundColor="Transparent"
+                    StrokeThickness="0"
+                    Padding="10"
+                    Margin="25,0">
+                <Label Text="Se debe respetar al personal y a otros conductores.No se permite el uso indebido de la app, como reservas falsas o duplicadas.Cualquier incumplimiento de estas normas puede resultar en la suspensión del servicio."
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="14"
+                       LineBreakMode="WordWrap" />
+            </Border>
+
+
+            <!-- Botón Aceptar -->
+
+            <Button 
+                Text="Aceptar" 
+                BackgroundColor="Aqua" 
+                TextColor="Black"
+                FontAttributes="Bold"
+                CornerRadius="20" 
+                HeightRequest="40"
+                WidthRequest="280"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

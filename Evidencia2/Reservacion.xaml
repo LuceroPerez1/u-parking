@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidencia2.Reservacion"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="U PARKING"
+                FontSize="35"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="Aqua"/>
+
+            <Image
+                    Source="mapa.jpeg"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Mapa del estacionamiento" 
+                    HorizontalOptions="Center"
+                    WidthRequest="310"/>
+            <Frame 
+                BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                <Button 
+                x:Name="ZonaEntry" 
+                Text="Selecciona una zona" 
+                Clicked="ZonaEntry_Clicked" 
+                BackgroundColor="Black" 
+                TextColor="White" 
+                BorderColor="#00D4FF" 
+                CornerRadius="20" 
+                Padding="5" 
+                HeightRequest="40"
+                WidthRequest="280" 
+                Margin="0,10,0,0" />
+            </Frame>
+
+            <Frame 
+                BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                <Button 
+                    x:Name="NumeroCajonEntry" 
+                    Text="Selecciona un número de cajón" 
+                    Clicked="NumeroCajonEntry_Clicked" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    BorderColor="#00D4FF" 
+                    CornerRadius="20" 
+                    Padding="5" 
+                    HeightRequest="40"
+                    WidthRequest="280" 
+                    Margin="0,10,0,0" />
+            </Frame>
+
+            <Frame 
+                BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                <Button 
+                    x:Name="HoraEntradaPicker" 
+                    Text="Selecciona la hora de entrada" 
+                    Clicked="HoraEntradaPicker_Clicked" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    BorderColor="#00D4FF" 
+                    CornerRadius="20" 
+                    Padding="5" 
+                    HeightRequest="40"
+                    WidthRequest="280" 
+                    Margin="0,10,0,0" />
+            </Frame>
+            <Frame 
+                BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                <Button 
+                    x:Name="HoraSalidaPicker" 
+                    Text="Selecciona la hora de salida" 
+                    Clicked="HoraSalidaPicker_Clicked" 
+                    BackgroundColor="Black" 
+                    TextColor="White" 
+                    BorderColor="#00D4FF" 
+                    CornerRadius="20" 
+                    Padding="5" 
+                    HeightRequest="40"
+                    WidthRequest="280" 
+                    Margin="0,10,0,0" />
+            </Frame>
+
+            <Button
+                x:Name="ReservarBtn"
+                Text="Reservar" 
+                BackgroundColor="Aqua" 
+                TextColor="Black"
+                FontAttributes="Bold"
+                CornerRadius="20" 
+                HeightRequest="40"
+                WidthRequest="280"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"
+                Clicked="OnReservarButtonClicked"/>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

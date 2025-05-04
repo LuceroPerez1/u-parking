@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidencia2.CrearCuenta"
+             BackgroundColor="Black">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label Text="U PAR-KING"
+               FontSize="16"
+               FontAttributes="Bold"
+               TextColor="#00D4FF"
+               HorizontalOptions="Center"
+               Grid.Row="0" Margin="0,5,0,3"/>
+
+        <!-- Contenido -->
+        <VerticalStackLayout Grid.Row="1" Spacing="12">
+
+            <Label Text="Crear cuenta" 
+                   FontSize="20" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   TextColor="White"
+                   Margin="0,10,0,10"/>
+
+            <!-- Campos de entrada -->
+            <VerticalStackLayout Spacing="12">
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryNombre" Placeholder="Nombre (s)" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryApellido" Placeholder="Apellido(s)" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryModelo" Placeholder="Modelo del vehículo" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryPlacas" Placeholder="Placas del vehículo" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryMarca" Placeholder="Marca del vehículo" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+
+                <!-- Color del vehículo -->
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryColor" Placeholder="Color del vehículo" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryEmail" Placeholder="Email" TextColor="White" BackgroundColor="Transparent" FontSize="14"/>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="#00D4FF" CornerRadius="20" Padding="5" HeightRequest="40" WidthRequest="280" Margin="0,10,0,0">
+                    <Entry x:Name="entryContrasena" Placeholder="Contraseña" TextColor="White" BackgroundColor="Transparent" IsPassword="True" FontSize="14"/>
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Botón crear cuenta -->
+            <Button Text="Crear Cuenta" 
+                    BackgroundColor="Aqua" 
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="20" 
+                    HeightRequest="40"
+                    WidthRequest="280"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0"
+                    Clicked="OnCrearCuentaClicked"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
