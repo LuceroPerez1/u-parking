@@ -125,6 +125,7 @@
             <!-- Botón Aceptar -->
 
             <Button 
+                x:Name="AceptarButton"
                 Text="Aceptar" 
                 BackgroundColor="Aqua" 
                 TextColor="Black"
@@ -134,8 +135,8 @@
                 WidthRequest="280"
                 FontSize="16"
                 HorizontalOptions="Center"
-                Margin="0,10,0,0"/>
-            
+                Margin="0,10,0,0"
+                Clicked="AceptarButton_Click"/>
         </VerticalStackLayout>
     </ScrollView>
 

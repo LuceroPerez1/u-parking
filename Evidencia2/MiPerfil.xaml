@@ -23,7 +23,7 @@
                    Aspect="AspectFill"/>
 
             <!-- Nombre -->
-            <Label Text="LUCERO ALHELÍ PÉREZ ESTRADA"
+            <Label x:Name="LabelNombreCompleto"
                    FontSize="18"
                    FontAttributes="Bold"
                    TextColor="White"
@@ -41,28 +41,32 @@
                 <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
 
                     <Label Text="Correo" FontSize="16" TextColor="gray"/>
-                    <Label Text="luceroestrada120@icloud.com" TextColor="White" FontSize="14"/>
-
-                    <Label Text="Teléfono" FontSize="16" TextColor="gray"/>
-                    <Label Text="8123217393" TextColor="White" FontSize="14"/>
+                    <Label x:Name="LabelCorreo" TextColor="White" FontSize="14"/>
 
                     <Label Text="Modelo del vehículo" FontSize="16" TextColor="gray"/>
-                    <Label Text="Spark 2017" TextColor="White" FontSize="14"/>
+                    <Label x:Name="LabelModelo" TextColor="White" FontSize="14"/>
+                    <Entry x:Name="EntryModelo" TextColor="White" FontSize="14" IsVisible="False"/>
 
                     <Label Text="Placas del vehículo" FontSize="16" TextColor="gray"/>
-                    <Label Text="SSN-103L" TextColor="White" FontSize="14"/>
+                    <Label x:Name="LabelPlacas" TextColor="White" FontSize="14"/>
+                    <Entry x:Name="EntryPlacas" TextColor="White" FontSize="14" IsVisible="False"/>
 
                     <Label Text="Marca del vehículo" FontSize="16" TextColor="gray"/>
-                    <Label Text="Chevrolet" TextColor="White" FontSize="14"/>
+                    <Label x:Name="LabelMarca" TextColor="White" FontSize="14"/>
+                    <Entry x:Name="EntryMarca" TextColor="White" FontSize="14" IsVisible="False"/>
 
                     <Label Text="Color del vehículo" FontSize="16" TextColor="gray"/>
-                    <Label Text="Verde" TextColor="White" FontSize="14"/>
+                    <Label x:Name="LabelColor" TextColor="White" FontSize="14"/>
+                    <Entry x:Name="EntryColor" TextColor="White" FontSize="14" IsVisible="False"/>
 
                 </VerticalStackLayout>
             </Frame>
 
+            <!-- Botón para editar o guardar -->
             <Button 
+                x:Name="BtnEditarGuardar"
                 Text="Editar" 
+                Clicked="BtnEditarGuardar_Clicked"
                 BackgroundColor="Aqua" 
                 TextColor="Black"
                 FontAttributes="Bold"
@@ -75,3 +79,5 @@
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+ 
+ 

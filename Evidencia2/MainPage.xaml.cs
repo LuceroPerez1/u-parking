@@ -1,4 +1,6 @@
-﻿namespace Evidencia2
+﻿using Microsoft.Maui.Controls;
+
+namespace Evidencia2
 {
     public partial class MainPage : ContentPage
     {
@@ -6,15 +8,15 @@
         {
             InitializeComponent();
         }
+
+        private async void OnCrearCuentaClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CrearCuenta());
+        }
+
+        private async void OnIniciarSesionClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InicioSesion());
+        }
     }
-    //private async void IrSignUp_Clicked(object sender, EventArgs e)
-    //{
-    //    await Navigation.PushAsync(new SignUpPage());
-    //}
-
-    //private async void IrLogIn_Clicked(object sender, EventArgs e)
-    //{
-    //    await Navigation.PushAsync(new LogInPage());
-    //}
-
 }

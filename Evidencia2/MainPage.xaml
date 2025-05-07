@@ -36,8 +36,8 @@
                 SemanticProperties.Description="Bienvenido" />
 
             <Button
-                x:Name="SignUpBtn"
-                Text="Sign up"
+                x:Name="CrearCuenta"
+                Text="Crear Cuenta"
                 BackgroundColor="White"
                 TextColor="Black"
                 CornerRadius="10"
@@ -45,11 +45,12 @@
                 WidthRequest="280"
                 FontSize="18"
                 HorizontalOptions="Center"
+                Clicked="OnCrearCuentaClicked"
                 Margin="0,10,0,0"/>
 
             <Button
-                x:Name="LogInBtn"
-                Text="Log in"
+                x:Name="InicioSesion"
+                Text="Iniciar sesión"
                 BackgroundColor="Aqua"
                 TextColor="Black"
                 CornerRadius="10"
@@ -57,12 +58,10 @@
                 WidthRequest="280"
                 FontSize="18"
                 HorizontalOptions="Center"
+                Clicked="OnIniciarSesionClicked"
                 Margin="0,10,0,0"/>
 
         </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
-
-
-

@@ -6,4 +6,9 @@ public partial class Reglamento : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    public async void AceptarButton_Click(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new InicioSesion());
+    }
 }

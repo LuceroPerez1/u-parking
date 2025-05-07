@@ -1,135 +1,105 @@
+Ôªøusing System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text.Json;
+using Microsoft.Maui.Controls;
 
 namespace Evidencia2
 {
     public partial class Reservacion : ContentPage
     {
-        public class FormularioReservaciones
+        public Reservacion()
         {
-            public required string Zona { get; set; }
-            public required string NumeroCajon { get; set; }
-            public required string HoraEntrada { get; set; }
-            public required string HoraSalida { get; set; }
+            InitializeComponent();
+        }
+
+        private async void OnMiReservacionClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MiReservacion());
+        }
+
+        private async void OnMiPerfilClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MiPerfil());
         }
 
         private async void ZonaEntry_Clicked(object sender, EventArgs e)
-{
-            string zonaSeleccionada = await DisplayActionSheet("Selecciona una zona", null , null, "Zona Norte", "Zona Centro", "Zona Oriente", "Zona Poniente");
-
-            if (zonaSeleccionada != null && zonaSeleccionada != "Cancelar")
-            {
+        {
+            string zonaSeleccionada = await DisplayActionSheet("Selecciona una zona", null, null, "Zona Norte", "Zona Centro", "Zona Oriente", "Zona Poniente");
+            if (!string.IsNullOrEmpty(zonaSeleccionada))
                 ZonaEntry.Text = zonaSeleccionada;
-            }
         }
 
         private async void NumeroCajonEntry_Clicked(object sender, EventArgs e)
         {
-            string cajonSeleccionado = await DisplayActionSheet("Selecciona un n˙mero de cajÛn", null, null,
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-                "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
-                "31", "32", "33", "34", "35", "36", "37", "38", "39", "40",
-                "41", "42", "43", "44", "45", "46", "47", "48", "49", "50",
-                "51", "52", "53", "54", "55", "56", "57", "58"
-            );
+            string cajonSeleccionado = await DisplayActionSheet("Selecciona un n√∫mero de caj√≥n", null, null,
+                Enumerable.Range(1, 58).Select(i => i.ToString()).ToArray());
 
-            if (cajonSeleccionado != null)
-            {
+            if (!string.IsNullOrEmpty(cajonSeleccionado))
                 NumeroCajonEntry.Text = cajonSeleccionado;
-            }
-        }
-
-        private async void HoraEntradaPicker_Clicked(object sender, EventArgs e)
-        {
-            string horaEntrada = await DisplayActionSheet(
-                "Selecciona la hora de entrada",
-                null,
-                null,
-                "00:00", "01:00", "02:00", "03:00", "04:00",
-                "05:00", "06:00", "07:00", "08:00", "09:00",
-                "10:00", "11:00", "12:00", "13:00", "14:00",
-                "15:00", "16:00", "17:00", "18:00", "19:00",
-                "20:00", "21:00", "22:00", "23:00"
-            );
-
-            if (horaEntrada != null)
-            {
-                HoraEntradaPicker.Text = horaEntrada;
-            }
-        }
-
-        private async void HoraSalidaPicker_Clicked(object sender, EventArgs e)
-        {
-            string horaSalida = await DisplayActionSheet(
-                "Selecciona la hora de salida",
-                null,
-                null,
-                "00:00", "01:00", "02:00", "03:00", "04:00",
-                "05:00", "06:00", "07:00", "08:00", "09:00",
-                "10:00", "11:00", "12:00", "13:00", "14:00",
-                "15:00", "16:00", "17:00", "18:00", "19:00",
-                "20:00", "21:00", "22:00", "23:00"
-            );
-
-            if (horaSalida != null)
-            {
-                HoraSalidaPicker.Text = horaSalida;
-            }
         }
 
         private async void OnReservarButtonClicked(object sender, EventArgs e)
         {
             string zona = ZonaEntry.Text;
             string numeroCajon = NumeroCajonEntry.Text;
-            string horaEntrada = HoraEntradaPicker.Text;
-            string horaSalida = HoraSalidaPicker.Text;
+            string horaEntrada = HoraEntradaPicker.Time.ToString(@"hh\:mm");
+            string horaSalida = HoraSalidaPicker.Time.ToString(@"hh\:mm");
 
-            // Validaciones b·sicas
-            if (zona.StartsWith("Selecciona") || numeroCajon.StartsWith("Selecciona") ||
-                horaEntrada.StartsWith("Selecciona") || horaSalida.StartsWith("Selecciona"))
+            if (string.IsNullOrWhiteSpace(zona) || string.IsNullOrWhiteSpace(numeroCajon))
             {
-                await DisplayAlert("Error", "Por favor completa todos los campos antes de reservar.", "OK");
+                await DisplayAlert("Error", "Por favor completa todos los campos.", "OK");
                 return;
             }
 
-            var nuevaReservacion = new FormularioReservaciones
+            var nueva = new FormularioReservaciones
             {
+                IdReservacion = new Random().Next(1000, 9999),
                 Zona = zona,
                 NumeroCajon = numeroCajon,
                 HoraEntrada = horaEntrada,
-                HoraSalida = horaSalida,
+                HoraSalida = horaSalida
             };
 
-            string nombreArchivo = "CrearReservacion.json";
-            string rutaCarpeta = @"C:\Users\52812\Documents\SEMESTRE 8 FACPYA\DESARROLLO DE APLICACIONES MOVILES MULTIPLATAFORMA\Evidencia2\Evidencia2";
-            string ruta = Path.Combine(rutaCarpeta, nombreArchivo);
+            // Ruta personalizada + archivo JSON
+            string rutaPersonal = @"C:\Users\52812\Documents\SEMESTRE 8 FACPYA\DESARROLLO DE APLICACIONES MOVILES MULTIPLATAFORMA\Evidencia2\Evidencia2";
+            string filePath = Path.Combine(rutaPersonal, "CrearReservacion.json");
 
-            List<FormularioReservaciones> historial = new();
-
-            try
+            List<FormularioReservaciones> reservaciones = new();
+            if (File.Exists(filePath))
             {
-                if (File.Exists(ruta))
-                {
-                    string jsonExistente = File.ReadAllText(ruta);
-                    historial = JsonSerializer.Deserialize<List<FormularioReservaciones>>(jsonExistente) ?? new List<FormularioReservaciones>();
-                }
-
-                historial.Add(nuevaReservacion);
-
-                string nuevoJson = JsonSerializer.Serialize(historial, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(ruta, nuevoJson);
-
-                await DisplayAlert("Guardado", $"ReservaciÛn guardada en:\n{ruta}", "OK");
+                string json = File.ReadAllText(filePath);
+                reservaciones = JsonSerializer.Deserialize<List<FormularioReservaciones>>(json) ?? new List<FormularioReservaciones>();
             }
-            catch (Exception ex)
+
+            // Validar traslape de horario
+            bool yaReservado = reservaciones.Any(r =>
+                r.Zona == nueva.Zona &&
+                r.NumeroCajon == nueva.NumeroCajon &&
+                TimeSpan.Parse(nueva.HoraEntrada) < TimeSpan.Parse(r.HoraSalida) &&
+                TimeSpan.Parse(nueva.HoraSalida) > TimeSpan.Parse(r.HoraEntrada)
+            );
+
+            if (yaReservado)
             {
-                await DisplayAlert("Error", $"OcurriÛ un error al guardar la reservaciÛn:\n{ex.Message}", "OK");
+                await DisplayAlert("Ocupado", "Ese caj√≥n ya est√° reservado durante ese horario.", "OK");
+                return;
             }
-        }
 
-        public Reservacion()
-        {
-            InitializeComponent();
+            // Guardar nueva reservaci√≥n
+            reservaciones.Add(nueva);
+            string nuevoJson = JsonSerializer.Serialize(reservaciones);
+            File.WriteAllText(filePath, nuevoJson);
+
+            ReservacionActiva.Datos = nueva;
+
+            await DisplayAlert("√âxito", "Reservaci√≥n guardada exitosamente.", "OK");
+            await Navigation.PushAsync(new MiReservacion());
         }
     }
 }
+
+
+
+
